@@ -24,3 +24,10 @@ function fizzBuzz(numero) {
 }
 
 console.log(fizzBuzz(numero));
+
+
+
+const hola = function saludar(nombre) {
+    return "hola " + nombre;
+}
+console.log(hola);
