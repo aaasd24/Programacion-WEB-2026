@@ -17,16 +17,11 @@ const total = datos.reduce((suma, { tamañoGB }) => suma + tamañoGB, 0);
 console.log("Total tamaño GB:", total);
 
 
-const promedio = datos.length > 0 ? total / datos.length : 0;
+const promedio = total / datos.length;
 console.log("Promedio tamaño GB:", promedio);
 
 
-const ordenados = [...datos]
-    .sort((a, b) => b.tamañoGB - a.tamañoGB)
-    .map(archivo => ({
-        ...archivo,
-        duracionMin: archivo.metadatos?.duracionMin ?? 0,
-    }));
+const ordenados = [...datos].sort((a, b) => b.tamañoGB - a.tamañoGB);
 
 console.log({ filtrados, total, promedio, ordenados });
 
